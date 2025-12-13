@@ -5,8 +5,13 @@
 #define SCREEN_HEIGHT  640
 #define TITLE          "Perfectory aersion 1.0"
 
-SDL_Surface* load_image() {
-
+SDL_Surface* load_image(char path[255]) {
+    SDL_Surface* image = IMG_Load(path);
+    if (image == NULL) {
+        printf("IMG_Load Error: %s\n", IMG_GetError());
+        return NULL;
+    }
+    return image;
 }
 
 int main() {
