@@ -1,8 +1,13 @@
 #include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
 
-#define SCREEN_WIDTH   1280
-#define SCREEN_HEIGHT  720
-#define TITLE          "Perfectory bersion 1.0"
+#define SCREEN_WIDTH   960
+#define SCREEN_HEIGHT  640
+#define TITLE          "Perfectory aersion 1.0"
+
+SDL_Surface* load_image() {
+
+}
 
 int main() {
     SDL_Renderer *renderer;
@@ -25,6 +30,12 @@ int main() {
         printf("SDL_CreateRenderer Error: %s\n", SDL_GetError());
         return 1;
     }
+    
+    int img_flags = IMG_INIT_PNG;
+	if (!(IMG_Init(img_flags) & img_flags)) {
+		printf("SDL_image could not initialize! SDL_image Error: %s\n", IMG_GetError());
+		return 1;
+	}
 
     SDL_Event event;
     while (running)
@@ -41,14 +52,15 @@ int main() {
             }
         }
         
-        SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+        SDL_SetRenderDrawColor(renderer, 113, 199, 245, 255);
         SDL_RenderClear(renderer);
         SDL_RenderPresent(renderer);
     }
 
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
-
+    
+    IMG_Quit();
     SDL_Quit();
 
     return 0;
