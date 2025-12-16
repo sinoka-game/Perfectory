@@ -7,8 +7,7 @@ int PER_conveyor_connect(int up, int down, int left, int right) {
     if (count == 0) {
         return CONV_VERTICAL;
     }
-
-    if (count == 1) {
+    else if (count == 1) {
         switch(bits) {
             case 0b1000: return CONV_VERTICAL;    // |
             case 0b0100: return CONV_VERTICAL;    // |
@@ -16,8 +15,7 @@ int PER_conveyor_connect(int up, int down, int left, int right) {
             case 0b0001: return CONV_HORIZONTAL;  // -
         }
     }
-
-    if (count == 2) {
+    else if (count == 2) {
         switch(bits) {
             case 0b1100: return CONV_VERTICAL;    // |
             case 0b0011: return CONV_HORIZONTAL;  // -
