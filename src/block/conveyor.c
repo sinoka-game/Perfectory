@@ -4,6 +4,10 @@ int PER_conveyor_connect(int up, int down, int left, int right) {
     int bits = (up << 3) | (down << 2) | (left << 1) | right;
     int count = up + down + left + right; // 접점 개수
 
+    if (count == 0) {
+        return CONV_VERTICAL;
+    }
+
     if (count == 1) {
         switch(bits) {
             case 0b1000: return CONV_VERTICAL;    // |
