@@ -88,7 +88,6 @@ int main() {
                     break;
                 case 1:
                     SDL_RenderCopy(renderer, grass_image, NULL, &dst);
-                    printf("%i",ground_map[x][y]);
                     break;
                 default:
                     SDL_RenderCopy(renderer, bnf_image, NULL, &dst);
