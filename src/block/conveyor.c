@@ -1,6 +1,6 @@
 #include "conveyor.h"
 
-ConveyorShape PER_conveyor_connect(int up, int down, int left, int right) {
+ConveyorShape PER_ConveyorConnect(int up, int down, int left, int right) {
     int bits = (up << 3) | (down << 2) | (left << 1) | right;
     int count = up + down + left + right; // 접점 개수
 

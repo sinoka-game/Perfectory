@@ -3,11 +3,11 @@
 
 #include "utils.h"
 
-SDL_Surface* load_image(char path[255]) {
-    SDL_Surface* image = IMG_Load(path);
-    if (image == NULL) {
-        printf("IMG_Load Error: %s\n", IMG_GetError());
+SDL_Texture* PER_LoadImage(SDL_Renderer *renderer, const char *path) {
+    SDL_Texture *grass_image = IMG_LoadTexture(renderer, path);
+    if (!grass_image) {
+        printf("IMG_LoadTexture error: %s\n", IMG_GetError());
         return NULL;
     }
-    return image;
+    return grass_image;
 }

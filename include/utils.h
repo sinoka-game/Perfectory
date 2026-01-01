@@ -4,6 +4,6 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 
-SDL_Surface* load_image(char path[255]);
+SDL_Texture* PER_LoadImage(SDL_Renderer *renderer, const char *path);
 
 #endif
