@@ -5,7 +5,7 @@
 
 // 헬퍼 함수: 테스트 결과 출력
 void test_case(int up, int down, int left, int right, int expected, const char* desc) {
-    int result = PER_conveyor_connect(up, down, left, right);
+    int result = PER_ConveyorConnect(up, down, left, right);
     printf("Test: %s -> ", desc);
     if(result == expected) {
         printf("PASSED\n");
