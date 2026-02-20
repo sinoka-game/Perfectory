@@ -12,9 +12,6 @@ struct SDL_Resources {
     SDL_Renderer* renderer;
 };
 
-SDL_Color sky = {113, 199, 245, 255};
-
-
 template <size_t Width, size_t Height>
 using MapData = std::array<std::array<int, Height>, Width>;
 

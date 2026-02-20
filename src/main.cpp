@@ -16,6 +16,8 @@ constexpr std::string_view TITLE = "Perfectory aersion 1.0";
 constexpr int MAP_WIDTH  = (SCREEN_WIDTH / TILE_SIZE);
 constexpr int MAP_HEIGHT = (SCREEN_HEIGHT / TILE_SIZE);
 
+SDL_Color sky = {113, 199, 245, 255}; // NOLINT
+
 namespace {
     SDL_Resources Init() {
         SDL_Resources res{nullptr, nullptr};
