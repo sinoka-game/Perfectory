@@ -18,3 +18,9 @@ SDL_Texture *LoadImage(SDL_Renderer *renderer, const char *path) {
 void SetColor(SDL_Renderer* renderer, SDL_Color c) {
     SDL_SetRenderDrawColor(renderer, c.r, c.g, c.b, c.a);
 }
+
+PerVector2 GetSize(SDL_Texture *texture) {
+    PerVector2 size;
+    SDL_QueryTexture(texture, NULL, NULL, &size.x, &size.y);
+    return size;
+}
